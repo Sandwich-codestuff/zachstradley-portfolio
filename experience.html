@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience — Zach Stradley</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #E6F1FB;
+      color: #042C53;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2.5rem;
+      background: #ffffff;
+      border-bottom: 1px solid #B5D4F4;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: #042C53;
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: #185FA5;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #042C53; }
+
+    .nav-links .active a {
+      font-weight: 500;
+      color: #042C53;
+      border-bottom: 1.5px solid #042C53;
+      padding-bottom: 1px;
+    }
+
+    /* ── Page ── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2.5rem 5rem;
+    }
+
+    .page-eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #185FA5;
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 42px;
+      color: #042C53;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+
+    .page-sub {
+      font-size: 15px;
+      color: #0C447C;
+      font-weight: 300;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── Company ── */
+    .company-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #B5D4F4;
+    }
+
+    .company-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      color: #042C53;
+    }
+
+    .company-tenure {
+      font-size: 13px;
+      color: #185FA5;
+    }
+
+    /* ── Role ── */
+    .role {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap: 1.5rem 2.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid #B5D4F4;
+    }
+
+    .role:last-of-type { border-bottom: none; }
+
+    .role-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: #042C53;
+      margin-bottom: 0.2rem;
+    }
+
+    .role-dates {
+      font-size: 12px;
+      color: #185FA5;
+      margin-bottom: 0.85rem;
+    }
+
+    .col-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #85B7EB;
+      margin-bottom: 0.5rem;
+    }
+
+    .col-label.hidden { opacity: 0; pointer-events: none; }
+
+    .role-what p, .role-why p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #0C447C;
+      font-weight: 300;
+    }
+
+    /* ── Stats ── */
+    .stat-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat {
+      background: #ffffff;
+      border: 1px solid #B5D4F4;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      flex: 1;
+      min-width: 130px;
+    }
+
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 30px;
+      color: #042C53;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #185FA5;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    /* ── Download button ── */
+    .download-wrap {
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: #185FA5;
+      color: #ffffff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-download:hover { background: #0C447C; }
+
+    .btn-download svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1rem; }
+      .page { padding: 2.5rem 1.25rem 4rem; }
+      .page-title { font-size: 32px; }
+      .role { grid-template-columns: 1fr; }
+      .col-label.hidden { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="index.html">Zach Stradley</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Let's Talk</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+    <p class="page-eyebrow">Career history</p>
+    <h1 class="page-title">Nine years, one company,<br>five roles.</h1>
+    <p class="page-sub">Every promotion came from doing the previous job well and refusing to stop being hands-on with the data.</p>
+
+    <div class="company-header">
+      <span class="company-name">Paylocity</span>
+      <span class="company-tenure">2016 to 2025 · Remote</span>
+    </div>
+
+    <!-- APM -->
+    <div class="role">
+      <div>
+        <div class="role-title">Associate Product Manager</div>
+        <div class="role-dates">Aug 2023 to Nov 2025</div>
+        <div class="col-label">What I did</div>
+        <p>Took on full PM responsibilities for multiple engineering teams while keeping complete ownership of analytics, SQL investigation, and executive reporting. Analyzed Salesforce case data daily, partnered directly with engineers to recreate issues in sandbox environments using Datadog, and ensured the highest-impact defects made it into sprints. Collaborated with the product team to write and contribute to 19 epics for new Workflows features in under a month, contributing to a 10x increase in monthly active users.</p>
+      </div>
+      <div>
+        <div class="col-label hidden">spacer</div>
+        <div class="col-label">Why it mattered</div>
+        <p>Provided the data and analytical foundation that directly supported the Workflows roadmap across automation, approval workflows, people management, and roles-based permissions. By keeping one foot in deep investigation and one in product planning, I served as the bridge between customer escalations and engineering across a platform serving 40K+ clients and 6M+ end users.</p>
+      </div>
+    </div>
+
+    <!-- Senior PA -->
+    <div class="role">
+      <div>
+        <div class="role-title">Senior Product Analyst</div>
+        <div class="role-dates">May 2022 to Aug 2023</div>
+        <div class="col-label">What I did</div>
+        <p>Built the company's dashboard ecosystem from scratch across Pendo, Salesforce, and Power BI. Consolidated fragmented telemetry, escalation data, and backlog metrics into unified Monthly and Quarterly Business Reviews for Director and VP leadership. Collaborated with Data Engineering to support development of customizable, dynamic compliance reports.</p>
+      </div>
+      <div>
+        <div class="col-label hidden">spacer</div>
+        <div class="col-label">Why it mattered</div>
+        <p>Leadership moved from gut-feel decisions to data-backed ones. My analysis of product telemetry and legacy architecture limitations built the business case for a complete rebuild of the flagship Workflows platform, a strategic investment greenlit by the executive team.</p>
+      </div>
+    </div>
+
+    <!-- ISA -->
+    <div class="role">
+      <div>
+        <div class="role-title">Implementation Support Analyst</div>
+        <div class="role-dates">Feb 2021 to May 2022</div>
+        <div class="col-label">What I did</div>
+        <p>Led technical troubleshooting post-deployment, documented complex system behaviors and edge cases, and established root cause resolution processes that reduced recurring support burdens.</p>
+      </div>
+      <div>
+        <div class="col-label hidden">spacer</div>
+        <div class="col-label">Why it mattered</div>
+        <p>Proactively addressing post-deployment issues meant fewer escalations reaching engineering, keeping the team focused on building rather than firefighting.</p>
+      </div>
+    </div>
+
+    <!-- TSS -->
+    <div class="role">
+      <div>
+        <div class="role-title">Technical Support Specialist</div>
+        <div class="role-dates">Jun 2018 to Feb 2021</div>
+        <div class="col-label">What I did</div>
+        <p>Resolved complex HR system bottlenecks and data discrepancies using advanced SQL to audit large datasets and pinpoint root causes. Distilled technical findings into high-quality reproduction steps to improve engineering escalations.</p>
+      </div>
+      <div>
+        <div class="col-label hidden">spacer</div>
+        <div class="col-label">Why it mattered</div>
+        <p>Faster, cleaner escalations meant engineering could reproduce and fix issues in less time, directly reducing resolution cycle times and operational downtime for clients.</p>
+      </div>
+    </div>
+
+    <!-- AM -->
+    <div class="role">
+      <div>
+        <div class="role-title">Account Manager III</div>
+        <div class="role-dates">Oct 2016 to Jun 2018</div>
+        <div class="col-label">What I did</div>
+        <p>Managed a portfolio of mid-market clients as their primary contact for platform adoption, issue resolution, and product guidance.</p>
+      </div>
+      <div>
+        <div class="col-label hidden">spacer</div>
+        <div class="col-label">Why it mattered</div>
+        <p>Client-facing experience gave me a deep understanding of how real users experience the product, context that shaped every analytical and product decision I made in the years that followed.</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-num">9</div>
+        <div class="stat-label">Years growing at one company</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6M+</div>
+        <div class="stat-label">End users supported</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">40K+</div>
+        <div class="stat-label">Enterprise clients</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">10×</div>
+        <div class="stat-label">Increase in monthly active users</div>
+      </div>
+    </div>
+
+    <!-- Download -->
+    <div class="download-wrap">
+      <a class="btn-download" href="Zachery Stradley Resume.pdf" download>
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download full resume
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
