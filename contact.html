@@ -16,11 +16,12 @@
     .nav-links a { font-size: 14px; font-weight: 400; color: #185FA5; text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: #042C53; }
     .nav-links .active a { font-weight: 500; color: #042C53; border-bottom: 1.5px solid #042C53; padding-bottom: 1px; }
-    .page { max-width: 900px; margin: 0 auto; padding: 5rem 2.5rem 5rem; display: flex; flex-direction: column; }
-    .two-col { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 4rem; align-items: start; margin-bottom: 3rem; }
+    .page { max-width: 900px; margin: 0 auto; padding: 5rem 2.5rem 5rem; }
+    .header { margin-bottom: 2.5rem; }
     .left-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #185FA5; margin-bottom: 1rem; }
-    .left-title { font-family: 'DM Serif Display', serif; font-size: 42px; color: #042C53; letter-spacing: -0.5px; line-height: 1.08; margin-bottom: 1.25rem; }
+    .left-title { font-family: 'DM Serif Display', serif; font-size: 42px; color: #042C53; letter-spacing: -0.5px; line-height: 1.08; }
     .left-title em { font-style: italic; color: #185FA5; }
+    .two-col { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 4rem; align-items: start; margin-bottom: 3rem; }
     .left-sub { font-size: 15px; line-height: 1.8; color: #0C447C; font-weight: 300; margin-bottom: 2rem; }
     .availability { display: flex; flex-direction: column; gap: 0.6rem; }
     .badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 999px; font-size: 13px; border: 1px solid #B5D4F4; background: #ffffff; color: #0C447C; width: fit-content; }
@@ -62,8 +63,8 @@
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 1rem; }
       .page { padding: 3rem 1.25rem 4rem; }
-      .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
       .left-title { font-size: 32px; }
+      .two-col { grid-template-columns: 1fr; gap: 2rem; }
     }
   </style>
 </head>
@@ -80,10 +81,13 @@
   </nav>
 
   <div class="page">
+    <div class="header">
+      <p class="left-eyebrow">Get in touch</p>
+      <h1 class="left-title">Open to work.<br><em>Open to projects.</em></h1>
+    </div>
+
     <div class="two-col">
       <div class="left">
-        <p class="left-eyebrow">Get in touch</p>
-        <h1 class="left-title">Open to work.<br><em>Open to projects.</em></h1>
         <p class="left-sub">Whether you're hiring for a Product Analyst or data-focused role, looking for freelance help, or just want to connect — reach out directly. No gatekeepers, no runaround.</p>
         <div class="availability">
           <span class="badge"><span class="badge-dot"></span>Available for full-time roles</span>
