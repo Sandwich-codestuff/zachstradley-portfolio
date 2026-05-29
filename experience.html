@@ -116,14 +116,13 @@
 
     /* ── Role ── */
     .role {
-      display: grid;
-      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-      gap: 1.5rem 2.5rem;
       padding: 1.75rem 0;
       border-bottom: 1px solid #B5D4F4;
     }
 
     .role:last-of-type { border-bottom: none; }
+
+    .role-header { margin-bottom: 1.25rem; }
 
     .role-title {
       font-size: 15px;
@@ -135,7 +134,13 @@
     .role-dates {
       font-size: 12px;
       color: #185FA5;
-      margin-bottom: 0.85rem;
+    }
+
+    .role-cols {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap: 1.5rem 2.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .col-label {
@@ -147,14 +152,14 @@
       margin-bottom: 0.5rem;
     }
 
-    .col-label.hidden { opacity: 0; pointer-events: none; }
-
-    .role-what p, .role-why p {
+    .role-cols p {
       font-size: 14px;
       line-height: 1.75;
       color: #0C447C;
       font-weight: 300;
     }
+
+    .role-product { padding-top: 0.25rem; }
 
     /* ── Stats ── */
     .stat-row {
@@ -272,7 +277,7 @@
 
   <div class="page">
     <p class="page-eyebrow">Career history</p>
-    <h1 class="page-title">Nine years, one company,<br>five roles.</h1>
+    <h1 class="page-title">Nine years,<br>one company,<br>five roles.</h1>
     <p class="page-sub">Every promotion came from doing the previous job well and refusing to stop being hands-on with the data.</p>
 
     <div class="company-header">
@@ -282,78 +287,97 @@
 
     <!-- APM -->
     <div class="role">
-      <div>
+      <div class="role-header">
         <div class="role-title">Associate Product Manager</div>
         <div class="role-dates">Aug 2023 to Nov 2025</div>
-        <div class="col-label">What I did</div>
-        <p>Took on full PM responsibilities for multiple engineering teams while keeping complete ownership of analytics, SQL investigation, and executive reporting. Analyzed Salesforce case data daily, partnered directly with engineers to recreate issues in sandbox environments using Datadog, and ensured the highest-impact defects made it into sprints. Collaborated with the product team to write and contribute to 19 epics for new Workflows features in under a month, contributing to a 10x increase in monthly active users.</p>
       </div>
-      <div>
-        <div class="col-label hidden">spacer</div>
-        <div class="col-label">Why it mattered</div>
-        <p>Provided the data and analytical foundation that directly supported the Workflows roadmap across automation, approval workflows, people management, and roles-based permissions. By keeping one foot in deep investigation and one in product planning, I served as the bridge between customer escalations and engineering across a platform serving 40K+ clients and 6M+ end users.</p>
+      <div class="role-cols">
+        <div>
+          <div class="col-label">What I did</div>
+          <p>Took on full PM responsibilities for multiple engineering teams while keeping complete ownership of analytics, SQL investigation, and executive reporting. Analyzed Salesforce case data daily, partnered directly with engineers to recreate issues in sandbox environments using Datadog, and ensured the highest-impact defects made it into sprints. Collaborated with the product team to write and contribute to 19 epics for new Workflows features in under a month, contributing to a 10x increase in monthly active users.</p>
+        </div>
+        <div>
+          <div class="col-label">Why it mattered</div>
+          <p>Provided the data and analytical foundation that directly supported the Workflows roadmap across automation, approval workflows, people management, and roles-based permissions. By keeping one foot in deep investigation and one in product planning, I served as the bridge between customer escalations and engineering across a platform serving 40K+ clients and 6M+ end users.</p>
+        </div>
+      </div>
+      <div class="role-product">
         <a class="btn-product" href="https://www.paylocity.com/products/capabilities/workflows/" target="_blank" rel="noopener noreferrer">View product ↗</a>
       </div>
     </div>
 
     <!-- Senior PA -->
     <div class="role">
-      <div>
+      <div class="role-header">
         <div class="role-title">Senior Product Analyst</div>
         <div class="role-dates">May 2022 to Aug 2023</div>
-        <div class="col-label">What I did</div>
-        <p>Built the company's dashboard ecosystem from scratch across Pendo, Salesforce, and Power BI. Consolidated fragmented telemetry, escalation data, and backlog metrics into unified Monthly and Quarterly Business Reviews for Director and VP leadership. Collaborated with Data Engineering to support development of customizable, dynamic compliance reports.</p>
       </div>
-      <div>
-        <div class="col-label hidden">spacer</div>
-        <div class="col-label">Why it mattered</div>
-        <p>Leadership moved from gut-feel decisions to data-backed ones. My analysis of product telemetry and legacy architecture limitations built the business case for a complete rebuild of the flagship Workflows platform, a strategic investment greenlit by the executive team.</p>
+      <div class="role-cols">
+        <div>
+          <div class="col-label">What I did</div>
+          <p>Built the company's dashboard ecosystem from scratch across Pendo, Salesforce, and Power BI. Consolidated fragmented telemetry, escalation data, and backlog metrics into unified Monthly and Quarterly Business Reviews for Director and VP leadership. Collaborated with Data Engineering to support development of customizable, dynamic compliance reports.</p>
+        </div>
+        <div>
+          <div class="col-label">Why it mattered</div>
+          <p>Leadership moved from gut-feel decisions to data-backed ones. My analysis of product telemetry and legacy architecture limitations built the business case for a complete rebuild of the flagship Workflows platform, a strategic investment greenlit by the executive team.</p>
+        </div>
+      </div>
+      <div class="role-product">
         <a class="btn-product" href="https://www.paylocity.com/products/capabilities/workflows/" target="_blank" rel="noopener noreferrer">View product ↗</a>
       </div>
     </div>
 
     <!-- ISA -->
     <div class="role">
-      <div>
+      <div class="role-header">
         <div class="role-title">Implementation Support Analyst</div>
         <div class="role-dates">Feb 2021 to May 2022</div>
-        <div class="col-label">What I did</div>
-        <p>Led technical troubleshooting post-deployment, documented complex system behaviors and edge cases, and established root cause resolution processes that reduced recurring support burdens.</p>
       </div>
-      <div>
-        <div class="col-label hidden">spacer</div>
-        <div class="col-label">Why it mattered</div>
-        <p>Proactively addressing post-deployment issues meant fewer escalations reaching engineering, keeping the team focused on building rather than firefighting.</p>
+      <div class="role-cols">
+        <div>
+          <div class="col-label">What I did</div>
+          <p>Led technical troubleshooting post-deployment, documented complex system behaviors and edge cases, and established root cause resolution processes that reduced recurring support burdens.</p>
+        </div>
+        <div>
+          <div class="col-label">Why it mattered</div>
+          <p>Proactively addressing post-deployment issues meant fewer escalations reaching engineering, keeping the team focused on building rather than firefighting.</p>
+        </div>
       </div>
     </div>
 
     <!-- TSS -->
     <div class="role">
-      <div>
+      <div class="role-header">
         <div class="role-title">Technical Support Specialist</div>
         <div class="role-dates">Jun 2018 to Feb 2021</div>
-        <div class="col-label">What I did</div>
-        <p>Resolved complex HR system bottlenecks and data discrepancies using advanced SQL to audit large datasets and pinpoint root causes. Distilled technical findings into high-quality reproduction steps to improve engineering escalations.</p>
       </div>
-      <div>
-        <div class="col-label hidden">spacer</div>
-        <div class="col-label">Why it mattered</div>
-        <p>Faster, cleaner escalations meant engineering could reproduce and fix issues in less time, directly reducing resolution cycle times and operational downtime for clients.</p>
+      <div class="role-cols">
+        <div>
+          <div class="col-label">What I did</div>
+          <p>Resolved complex HR system bottlenecks and data discrepancies using advanced SQL to audit large datasets and pinpoint root causes. Distilled technical findings into high-quality reproduction steps to improve engineering escalations.</p>
+        </div>
+        <div>
+          <div class="col-label">Why it mattered</div>
+          <p>Faster, cleaner escalations meant engineering could reproduce and fix issues in less time, directly reducing resolution cycle times and operational downtime for clients.</p>
+        </div>
       </div>
     </div>
 
     <!-- AM -->
     <div class="role">
-      <div>
+      <div class="role-header">
         <div class="role-title">Account Manager III</div>
         <div class="role-dates">Oct 2016 to Jun 2018</div>
-        <div class="col-label">What I did</div>
-        <p>Managed a portfolio of mid-market clients as their primary contact for platform adoption, issue resolution, and product guidance.</p>
       </div>
-      <div>
-        <div class="col-label hidden">spacer</div>
-        <div class="col-label">Why it mattered</div>
-        <p>Client-facing experience gave me a deep understanding of how real users experience the product, context that shaped every analytical and product decision I made in the years that followed.</p>
+      <div class="role-cols">
+        <div>
+          <div class="col-label">What I did</div>
+          <p>Managed a portfolio of mid-market clients as their primary contact for platform adoption, issue resolution, and product guidance.</p>
+        </div>
+        <div>
+          <div class="col-label">Why it mattered</div>
+          <p>Client-facing experience gave me a deep understanding of how real users experience the product, context that shaped every analytical and product decision I made in the years that followed.</p>
+        </div>
       </div>
     </div>
 
